@@ -432,6 +432,51 @@ main section {
   cursor: pointer;
 }
 
+.download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 24px;
+}
+
+.download-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+  border-top: 6px solid #e87524;
+  border-radius: 8px;
+}
+
+.download-format {
+  display: inline-block;
+  padding: 4px 10px;
+  color: #a9470b;
+  background-color: #fff0e4;
+  border-radius: 16px;
+  font-size: 14px;
+}
+
+.download-card h3 {
+  margin: 12px 0 8px;
+  font-size: 20px;
+  line-height: 1.5;
+}
+
+.download-card p {
+  margin: 0;
+  color: #666666;
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+.download-link {
+  justify-self: start;
+  white-space: nowrap;
+}
+
 .booking-next {
   display: block;
   width: 100%;
@@ -451,11 +496,13 @@ main section {
 }
 
 @media (max-width: 767px) {
-  .intro-gallery {
+  .intro-gallery,
+  .download-grid {
     grid-template-columns: 1fr;
   }
 
-  .room-card {
+  .room-card,
+  .download-card {
     grid-template-columns: 1fr;
   }
 }
