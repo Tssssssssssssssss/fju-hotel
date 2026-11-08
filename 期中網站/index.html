@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>聖心學苑教學旅館</title>
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+  </head>
+
+  <body id="top">
+    <header class="site-header">
+      <h1><a href="#top" aria-label="聖心學苑教學旅館，回到頁首">聖心學苑教學旅館</a></h1>
+      <p>輔仁大學餐旅管理學系</p>
+
+      <nav aria-label="主要導覽">
+        <a href="#announcements">公告區</a>
+        <a href="#booking">預約訂房</a>
+        <button
+          type="button"
+          id="admin-login-button"
+          data-bs-toggle="modal"
+          data-bs-target="#admin-login-modal">
+          管理者登入
+        </button>
+        <a href="#admin-panel" id="admin-panel-link" hidden>後臺管理</a>
+        <button type="button" id="admin-logout" hidden>登出</button>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <p class="hero-label">輔仁大學・聖心學苑</p>
+
+        <h2 id="hero-title">聖心學苑教學旅館</h2>
+
+        <p class="hero-description">讓學習走進服務，讓款待成為日常。</p>
+
+        <div class="hero-actions">
+          <a href="#booking" class="button-primary">查看房型</a>
+          <a href="#hotel-intro" class="button-outline">認識旅館</a>
+        </div>
+
+        <figure class="hero-photo">
+          <img
+            src="images/hotel-entrance.jpg"
+            alt="聖心學苑教學旅館入口"
+            width="590"
+            height="442"
+          >
+          <figcaption>聖心學苑教學旅館入口</figcaption>
+        </figure>
+      </section>
+      <section id="hotel-intro">
+        <h2>認識旅館</h2>
+
+        <p>本系將校內原聖心學苑規劃為「教學旅館」，提供學生學習客務管理與房務管理課程之實際演練場所，並提供校內貴賓住宿服務。學生將從校內行銷宣傳、訂房確認、迎賓待客、房務服務及清潔整理，將所學的旅館管理實務運用於實習的教學旅館，以達到理論與實務接軌的目標。</p>
+
+        <div class="intro-gallery">
+          <figure>
+            <img src="images/hotel-team.jpg" alt="聖心學苑教學旅館服務團隊合影" width="1252" height="296" loading="lazy">
+            <figcaption>教學旅館服務團隊</figcaption>
+          </figure>
+
+          <figure>
+            <img src="images/hotel-reception.jpg" alt="聖心學苑教學旅館接待櫃檯" width="584" height="439" loading="lazy">
+            <figcaption>旅館接待櫃檯</figcaption>
+          </figure>
+        </div>
+      </section>
+      <section id="announcements">
+        <div class="section-heading">
+          <h2>最新公告</h2>
+          <p>旅館優惠與住宿消息</p>
+        </div>
+
+        <div class="announcement-grid">
+          <article class="announcement-card">
+            <div class="announcement-meta">
+              <span class="announcement-tag">促銷方案</span>
+              <time datetime="2026-11-01">2026.11.01</time>
+            </div>
+
+            <h3>校友返校住宿優惠</h3>
+
+            <p>
+              返校相聚，享受校園裡的溫暖住宿。
+              查看活動期間與適用房型。
+            </p>
+
+            <button type="button" class="announcement-detail" data-bs-toggle="modal" data-bs-target="#announcement-modal-1">
+              查看詳情 →
+            </button>
+          </article>
+
+          <article class="announcement-card">
+            <div class="announcement-meta">
+              <span class="announcement-tag">促銷方案</span>
+              <time datetime="2026-10-20">2026.10.20</time>
+            </div>
+
+            <h3>平日住宿優惠方案</h3>
+
+            <p>
+              安排平日住宿，感受悠閒校園時光。
+              優惠內容與預約方式請見詳情。
+            </p>
+
+            <button type="button" class="announcement-detail" data-bs-toggle="modal" data-bs-target="#announcement-modal-2">
+              查看詳情 →
+            </button>
+          </article>
+
+          <article class="announcement-card">
+            <div class="announcement-meta">
+              <span class="announcement-tag">促銷方案</span>
+              <time datetime="2026-10-10">2026.10.10</time>
+            </div>
+
+            <h3>校園活動住宿專案</h3>
+
+            <p>
+              參與校園活動，提前安排住宿。
+              適用對象與專案內容請見詳情。
+            </p>
+
+            <button type="button" class="announcement-detail" data-bs-toggle="modal" data-bs-target="#announcement-modal-3">
+              查看詳情 →
+            </button>
+          </article>
+        </div>
+
+        <p class="demo-note">以上公告為課堂作業示範內容。</p>
+      </section>
+
+      <section id="booking">
+        <div class="section-heading">
+          <h2>預約訂房</h2>
+          <p>安排住宿，或查詢您的預約</p>
+        </div>
+
+        <div class="nav nav-underline booking-tabs" role="tablist" aria-label="訂房功能">
+          <button
+            class="nav-link active"
+            id="booking-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#booking-panel"
+            type="button"
+            role="tab"
+            aria-controls="booking-panel"
+            aria-selected="true">
+            我要訂房
+          </button>
+
+          <button
+            class="nav-link"
+            id="reservation-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#reservation-panel"
+            type="button"
+            role="tab"
+            aria-controls="reservation-panel"
+            aria-selected="false">
+            查詢／取消預約
+          </button>
+        </div>
+
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="booking-panel" role="tabpanel" aria-labelledby="booking-tab" tabindex="0">
+            <form id="room-step" class="collapse show" data-bs-parent="#booking-panel">
+              <div class="row g-3">
+                <div class="col-md-4">
+                  <label for="check-in" class="form-label">入住日期</label>
+                  <input type="date" id="check-in" name="check-in" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="check-out" class="form-label">退房日期</label>
+                  <input type="date" id="check-out" name="check-out" class="form-control" required>
+                </div>
+
+                <div class="col-md-4">
+                  <label for="guest-count" class="form-label">入住人數</label>
+                  <select id="guest-count" name="guest-count" class="form-select">
+                    <option value="1">1 位</option>
+                    <option value="2">2 位</option>
+                  </select>
+                </div>
+              </div>
+
+              <article class="room-card">
+                <img class="room-media" src="images/deluxe-single.jpg" alt="豪華單人房，設有一張單人床與書桌" width="598" height="306" loading="lazy">
+                <div>
+                  <h3>豪華單人房</h3>
+                  <p class="room-price">NT$1,200/晚</p>
+                  <p class="room-note">課堂作業示範房價</p>
+                </div>
+
+                <label class="room-choice">
+                  <input type="radio" name="room-type" value="deluxe-single" required>
+                  選擇此房型
+                </label>
+              </article>
+
+              <article class="room-card">
+                <img class="room-media" src="images/premium-single.jpg" alt="尊榮單人房，設有床鋪與床頭燈" width="640" height="360" loading="lazy">
+                <div>
+                  <h3>尊榮單人房</h3>
+                  <p class="room-price">NT$1,800/晚</p>
+                  <p class="room-note">房價參考旅館官網，本站為課堂作業</p>
+                </div>
+
+                <label class="room-choice">
+                  <input type="radio" name="room-type" value="premium-single" required>
+                  選擇此房型
+                </label>
+              </article>
+
+              <article class="room-card">
+                <img class="room-media" src="images/deluxe-twin.jpg" alt="豪華雙床房，設有兩張單人床" width="640" height="360" loading="lazy">
+                <div>
+                  <h3>豪華雙床房</h3>
+                  <p class="room-price">NT$1,800/晚</p>
+                  <p class="room-note">課堂作業示範房價</p>
+                </div>
+
+                <label class="room-choice">
+                  <input type="radio" name="room-type" value="deluxe-twin" required>
+                  選擇此房型
+                </label>
+              </article>
+
+              <article class="room-card">
+                <div class="room-media room-placeholder">無圖片待加入</div>
+                <div>
+                  <h3>尊榮雙人房</h3>
+                  <p class="room-price">NT$2,500/晚</p>
+                  <p class="room-note">房價參考旅館官網，本站為課堂作業</p>
+                </div>
+
+                <label class="room-choice">
+                  <input type="radio" name="room-type" value="premium-double" required>
+                  選擇此房型
+                </label>
+              </article>
+
+              <article class="room-card">
+                <div class="room-media room-placeholder">無圖片待加入</div>
+                <div>
+                  <h3>貴賓聖心套房</h3>
+                  <p class="room-price">NT$3,000/晚</p>
+                  <p class="room-note">房價參考旅館官網，本站為課堂作業</p>
+                </div>
+
+                <label class="room-choice">
+                  <input type="radio" name="room-type" value="vip-suite" required>
+                  選擇此房型
+                </label>
+              </article>
+
+              <button type="submit" class="button-primary booking-next" id="booking-next">
+                下一步：填寫資料
+              </button>
+            </form>
+
+            <div id="guest-details" class="collapse mt-4" data-bs-parent="#booking-panel">
+              <h3 class="fs-4 mb-3">填寫預約資料</h3>
+
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <label for="guest-name" class="form-label">姓名</label>
+                  <input type="text" id="guest-name" name="guest-name" class="form-control" autocomplete="name">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="guest-phone" class="form-label">聯絡電話</label>
+                  <input type="tel" id="guest-phone" name="guest-phone" class="form-control" autocomplete="tel">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="guest-email" class="form-label">Email</label>
+                  <input type="email" id="guest-email" name="guest-email" class="form-control" autocomplete="email">
+                </div>
+
+                <div class="col-md-6">
+                  <label for="guest-identity" class="form-label">住宿身分</label>
+                  <select id="guest-identity" name="guest-identity" class="form-select">
+                    <option value="">請選擇住宿身分</option>
+                    <option value="invited-guest">系所邀請之貴賓</option>
+                    <option value="alumni">校友</option>
+                    <option value="event-participant">輔大活動參與者</option>
+                  </select>
+                </div>
+
+                <div class="col-12">
+                  <label for="guest-note" class="form-label">備註（選填）</label>
+                  <textarea id="guest-note" name="guest-note" class="form-control" rows="3" placeholder="如有特殊需求，請在這裡填寫。"></textarea>
+                </div>
+
+                <div class="booking-actions">
+                  <button
+                    type="button"
+                    class="button-outline"
+                    id="booking-back"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#room-step"
+                    aria-expanded="true"
+                    aria-controls="room-step">
+                    返回選房
+                  </button>
+
+                  <button type="button" class="button-primary" id="booking-confirm" data-bs-toggle="modal" data-bs-target="#booking-success-modal">
+                    確認預約
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="reservation-panel" role="tabpanel" aria-labelledby="reservation-tab" tabindex="0">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="reservation-number" class="form-label">預約編號</label>
+                <input type="text" id="reservation-number" name="reservation-number" class="form-control" placeholder="例如：DEMO001">
+              </div>
+
+              <div class="col-md-6">
+                <label for="reservation-phone" class="form-label">聯絡電話</label>
+                <input type="tel" id="reservation-phone" name="reservation-phone" class="form-control" autocomplete="tel" placeholder="請輸入訂房時填寫的電話">
+              </div>
+            </div>
+
+            <button type="button"  class="button-primary mt-4" id="reservation-search" data-bs-toggle="collapse"  data-bs-target="#reservation-result"  aria-expanded="false"  aria-controls="reservation-result">
+              查詢預約
+            </button>
+            <div id="reservation-result" class="collapse mt-4">
+              <div class="card card-body">
+                <h3 class="fs-4 mb-3">示範預約資料</h3>
+                <p class="text-secondary small">課堂作業示範，非實際預約紀錄。</p>
+
+                <dl class="row mb-0">
+                  <dt class="col-sm-4">預約編號</dt>
+                  <dd class="col-sm-8">DEMO001</dd>
+
+                  <dt class="col-sm-4">預約人</dt>
+                  <dd class="col-sm-8">示範住客</dd>
+
+                  <dt class="col-sm-4">房型</dt>
+                  <dd class="col-sm-8">豪華單人房</dd>
+
+                  <dt class="col-sm-4">入住日期</dt>
+                  <dd class="col-sm-8">2026/12/10</dd>
+
+                  <dt class="col-sm-4">退房日期</dt>
+                  <dd class="col-sm-8">2026/12/11</dd>
+
+                  <dt class="col-sm-4">預約狀態</dt>
+                  <dd class="col-sm-8">已預約</dd>
+                </dl>
+
+                <p class="text-secondary small mt-3">
+                  住客入住當天無法自行取消，如需協助請聯絡管理者。
+                </p>
+
+                <button  type="button" class="button-outline align-self-start" data-bs-toggle="modal" data-bs-target="#cancel-reservation-modal">
+                  取消預約
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="admin-panel" tabindex="-1" hidden>
+        <div class="section-heading">
+          <h2>後臺管理</h2>
+          <p>管理訂房、公告與營運報表</p>
+        </div>
+
+        <div class="nav nav-underline admin-tabs" role="tablist" aria-label="管理功能">
+          <button
+            type="button"
+            class="nav-link active"
+            id="admin-bookings-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#admin-bookings-panel"
+            role="tab"
+            aria-controls="admin-bookings-panel"
+            aria-selected="true">
+            訂房管理
+          </button>
+
+          <button
+            type="button"
+            class="nav-link"
+            id="admin-announcements-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#admin-announcements-panel"
+            role="tab"
+            aria-controls="admin-announcements-panel"
+            aria-selected="false">
+            公告管理
+          </button>
+
+          <button
+            type="button"
+            class="nav-link"
+            id="admin-reports-tab"
+            data-bs-toggle="tab"
+            data-bs-target="#admin-reports-panel"
+            role="tab"
+            aria-controls="admin-reports-panel"
+            aria-selected="false">
+            營運報表
+          </button>
+        </div>
+
+        <div class="tab-content">
+          <div class="tab-pane fade show active" id="admin-bookings-panel" role="tabpanel" aria-labelledby="admin-bookings-tab" tabindex="0">
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle text-nowrap admin-table">
+                <caption class="caption-top">課堂作業示範訂房資料</caption>
+
+                <thead>
+                  <tr>
+                    <th scope="col">預約編號</th>
+                    <th scope="col">預約人</th>
+                    <th scope="col">房型</th>
+                    <th scope="col">入住／退房</th>
+                    <th scope="col">狀態</th>
+                    <th scope="col">操作</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <th scope="row">DEMO001</th>
+                    <td>示範住客</td>
+                    <td>豪華單人房</td>
+                    <td>2026/12/10～2026/12/11</td>
+                    <td>已預約</td>
+                    <td>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#admin-booking-edit-modal">修改</button>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#admin-booking-cancel-modal">取消</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="admin-announcements-panel" role="tabpanel" aria-labelledby="admin-announcements-tab" tabindex="0">
+            <div class="d-flex justify-content-end mb-3">
+              <button
+                type="button"
+                class="button-primary"
+                id="announcement-add"
+                data-bs-toggle="modal"
+                data-bs-target="#announcement-editor-modal">
+                新增公告
+              </button>
+            </div>
+
+            <div class="table-responsive">
+              <table class="table table-bordered align-middle text-nowrap admin-table">
+                <caption class="caption-top">課堂作業示範公告資料</caption>
+
+                <thead>
+                  <tr>
+                    <th scope="col">公告標題</th>
+                    <th scope="col">促銷期間</th>
+                    <th scope="col">操作</th>
+                  </tr>
+                </thead>
+
+                <tbody>
+                  <tr>
+                    <th scope="row">校友返校住宿優惠</th>
+                    <td>2026/11/01～2026/12/31</td>
+                    <td>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#announcement-edit-modal-1">修改</button>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#announcement-delete-modal">刪除</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">平日住宿優惠方案</th>
+                    <td>2026/10/20～2026/12/20</td>
+                    <td>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#announcement-edit-modal-2">修改</button>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#announcement-delete-modal">刪除</button>
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <th scope="row">校園活動住宿專案</th>
+                    <td>2026/10/10～2026/11/30</td>
+                    <td>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#announcement-edit-modal-3">修改</button>
+                      <button type="button" class="button-outline" data-bs-toggle="modal" data-bs-target="#announcement-delete-modal">刪除</button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </div>
+
+          <div class="tab-pane fade" id="admin-reports-panel" role="tabpanel" aria-labelledby="admin-reports-tab" tabindex="0">
+            <section id="reports">
+              <div class="nav nav-underline report-tabs" role="tablist" aria-label="營運報表分類">
+                <button
+                  type="button"
+                  class="nav-link active"
+                  id="monthly-report-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#monthly-report-panel"
+                  role="tab"
+                  aria-controls="monthly-report-panel"
+                  aria-selected="true">
+                  每月營運
+                </button>
+
+                <button
+                  type="button"
+                  class="nav-link"
+                  id="room-report-tab"
+                  data-bs-toggle="tab"
+                  data-bs-target="#room-report-panel"
+                  role="tab"
+                  aria-controls="room-report-panel"
+                  aria-selected="false">
+                  房型營運
+                </button>
+              </div>
+
+              <div class="tab-content">
+                <div class="tab-pane fade show active" id="monthly-report-panel" role="tabpanel" aria-labelledby="monthly-report-tab" tabindex="0">
+                  <p class="text-secondary small">以下為課堂作業的年度模擬統計。</p>
+                  <div class="row g-3">
+                    <div class="col-md-4">
+                      <div class="card card-body text-center h-100 report-stat">
+                        <h3 class="fs-5 mb-3">已住房晚數</h3>
+                        <p class="report-value mb-0">960 房晚</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card card-body text-center h-100 report-stat">
+                        <h3 class="fs-5 mb-3">年度入住率</h3>
+                        <p class="report-value mb-0">50.0%</p>
+                        <p class="small text-secondary mt-2 mb-0">960 ÷ 1,920 可售房晚</p>
+                      </div>
+                    </div>
+
+                    <div class="col-md-4">
+                      <div class="card card-body text-center h-100 report-stat">
+                        <h3 class="fs-5 mb-3">年度總營收</h3>
+                        <p class="report-value mb-0">NT$1,440,000</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="table-responsive mt-4">
+                    <table class="table table-bordered align-middle text-nowrap admin-table" id="monthly-report-table">
+                      <caption class="caption-top">2026 年每月營運明細（示範）</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">月份</th>
+                          <th scope="col" class="text-end">已住房晚數</th>
+                          <th scope="col" class="text-end">可售房晚數</th>
+                          <th scope="col" class="text-end">入住率</th>
+                          <th scope="col" class="text-end">營收</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">1 月</th>
+                          <td class="text-end">64</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">40.0%</td>
+                          <td class="text-end">NT$96,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">2 月</th>
+                          <td class="text-end">88</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">55.0%</td>
+                          <td class="text-end">NT$132,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">3 月</th>
+                          <td class="text-end">80</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">50.0%</td>
+                          <td class="text-end">NT$120,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">4 月</th>
+                          <td class="text-end">72</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">45.0%</td>
+                          <td class="text-end">NT$108,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">5 月</th>
+                          <td class="text-end">76</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">47.5%</td>
+                          <td class="text-end">NT$114,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">6 月</th>
+                          <td class="text-end">76</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">47.5%</td>
+                          <td class="text-end">NT$114,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">7 月</th>
+                          <td class="text-end">96</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">60.0%</td>
+                          <td class="text-end">NT$144,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">8 月</th>
+                          <td class="text-end">104</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">65.0%</td>
+                          <td class="text-end">NT$156,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">9 月</th>
+                          <td class="text-end">88</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">55.0%</td>
+                          <td class="text-end">NT$132,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">10 月</th>
+                          <td class="text-end">72</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">45.0%</td>
+                          <td class="text-end">NT$108,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">11 月</th>
+                          <td class="text-end">64</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">40.0%</td>
+                          <td class="text-end">NT$96,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">12 月</th>
+                          <td class="text-end">80</td>
+                          <td class="text-end">160</td>
+                          <td class="text-end">50.0%</td>
+                          <td class="text-end">NT$120,000</td>
+                        </tr>
+                      </tbody>
+                      <tfoot class="fw-bold">
+                        <tr>
+                          <th scope="row">全年合計</th>
+                          <td class="text-end">960</td>
+                          <td class="text-end">1,920</td>
+                          <td class="text-end">50.0%</td>
+                          <td class="text-end">NT$1,440,000</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                  <p class="text-secondary small mb-0">示範設定：每月可售 160 房晚，平均每房晚營收 NT$1,500，非旅館實際營運資料。</p>
+                </div>
+
+                <div class="tab-pane fade" id="room-report-panel" role="tabpanel" aria-labelledby="room-report-tab" tabindex="0">
+                  <p class="text-secondary small">以下為課堂作業的年度房型模擬統計。</p>
+
+                  <div class="table-responsive">
+                    <table class="table table-bordered align-middle text-nowrap admin-table" id="room-report-table">
+                      <caption class="caption-top">2026 年房型營運明細（示範）</caption>
+                      <thead>
+                        <tr>
+                          <th scope="col">房型</th>
+                          <th scope="col" class="text-end">每晚房價</th>
+                          <th scope="col" class="text-end">已住房晚數</th>
+                          <th scope="col" class="text-end">可售房晚數</th>
+                          <th scope="col" class="text-end">入住率</th>
+                          <th scope="col" class="text-end">營收</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <th scope="row">豪華單人房</th>
+                          <td class="text-end">NT$1,200</td>
+                          <td class="text-end">670</td>
+                          <td class="text-end">1,320</td>
+                          <td class="text-end">50.8%</td>
+                          <td class="text-end">NT$804,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">尊榮單人房</th>
+                          <td class="text-end">NT$1,800</td>
+                          <td class="text-end">60</td>
+                          <td class="text-end">120</td>
+                          <td class="text-end">50.0%</td>
+                          <td class="text-end">NT$108,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">豪華雙床房</th>
+                          <td class="text-end">NT$1,800</td>
+                          <td class="text-end">110</td>
+                          <td class="text-end">240</td>
+                          <td class="text-end">45.8%</td>
+                          <td class="text-end">NT$198,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">尊榮雙人房</th>
+                          <td class="text-end">NT$2,500</td>
+                          <td class="text-end">60</td>
+                          <td class="text-end">120</td>
+                          <td class="text-end">50.0%</td>
+                          <td class="text-end">NT$150,000</td>
+                        </tr>
+                        <tr>
+                          <th scope="row">貴賓聖心套房</th>
+                          <td class="text-end">NT$3,000</td>
+                          <td class="text-end">60</td>
+                          <td class="text-end">120</td>
+                          <td class="text-end">50.0%</td>
+                          <td class="text-end">NT$180,000</td>
+                        </tr>
+                      </tbody>
+                      <tfoot class="fw-bold">
+                        <tr>
+                          <th scope="row" colspan="2">合計</th>
+                          <td class="text-end">960</td>
+                          <td class="text-end">1,920</td>
+                          <td class="text-end">50.0%</td>
+                          <td class="text-end">NT$1,440,000</td>
+                        </tr>
+                      </tfoot>
+                    </table>
+                  </div>
+
+                  <p class="text-secondary small mb-0">可售房晚為示範設定；入住率＝已住房晚數 ÷ 可售房晚數，營收＝每晚房價 × 已住房晚數，非旅館實際營運資料。</p>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <div class="modal fade announcement-modal" id="announcement-modal-1" tabindex="-1" aria-labelledby="announcement-title-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="announcement-title-1">校友返校住宿優惠</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉公告"></button>
+          </div>
+          <div class="modal-body">
+            <p class="announcement-date">公告日期：<time datetime="2026-11-01">2026.11.01</time></p>
+            <p>活動期間：2026/11/01 至 2026/12/31</p>
+            <p>適用對象：返校參與活動之校友。</p>
+            <p>優惠內容：活動期間預約住宿，可享指定房型九折優惠。</p>
+            <p>預約時請於備註填寫「校友返校優惠」。</p>
+            <p class="announcement-disclaimer">本公告為課堂作業示範內容，非實際優惠。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade announcement-modal" id="announcement-modal-2" tabindex="-1" aria-labelledby="announcement-title-2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="announcement-title-2">平日住宿優惠方案</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉公告"></button>
+          </div>
+          <div class="modal-body">
+            <p class="announcement-date">公告日期：<time datetime="2026-10-20">2026.10.20</time></p>
+            <p>活動期間：2026/10/20 至 2026/12/20</p>
+            <p>適用對象：符合本館住宿資格之住客。</p>
+            <p>優惠內容：週一至週四入住指定房型，可享平日住宿優惠，例假日不適用。</p>
+            <p>詳細條件請洽旅館服務人員。</p>
+            <p class="announcement-disclaimer">本公告為課堂作業示範內容，非實際優惠。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade announcement-modal" id="announcement-modal-3" tabindex="-1" aria-labelledby="announcement-title-3" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title" id="announcement-title-3">校園活動住宿專案</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉公告"></button>
+          </div>
+          <div class="modal-body">
+            <p class="announcement-date">公告日期：<time datetime="2026-10-10">2026.10.10</time></p>
+            <p>活動期間：2026/10/10 至 2026/11/30</p>
+            <p>適用對象：參與輔仁大學校園活動者。</p>
+            <p>優惠內容：配合校園活動提供指定房型住宿專案。</p>
+            <p>預約時請於備註填寫活動名稱。</p>
+            <p class="announcement-disclaimer">本公告為課堂作業示範內容，非實際優惠。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="cancel-reservation-modal" tabindex="-1" aria-labelledby="cancel-reservation-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="cancel-reservation-title">取消預約確認</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <p>確定要取消預約 DEMO001 嗎？</p>
+            <p class="mb-0">房型：豪華單人房<br>住宿日期：2026/12/10 至 2026/12/11</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              保留預約
+            </button>
+
+            <button type="button" class="button-primary" id="reservation-cancel-confirm" disabled>
+              確認取消
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="admin-login-modal" tabindex="-1" aria-labelledby="admin-login-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <form class="modal-content" id="admin-login-form">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="admin-login-title">管理者登入</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉登入視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <p class="text-secondary small" id="admin-login-hint">純前端示範登入：帳號 admin，密碼 1234。</p>
+            <div class="mb-3">
+              <label for="admin-account" class="form-label">帳號</label>
+              <input type="text" id="admin-account" name="admin-account" class="form-control" autocomplete="username" aria-describedby="admin-login-hint" required>
+            </div>
+
+            <div>
+              <label for="admin-password" class="form-label">密碼</label>
+              <input type="password" id="admin-password" name="admin-password" class="form-control" autocomplete="current-password" aria-describedby="admin-login-hint" required>
+            </div>
+
+            <p class="text-danger small mt-3 mb-0" id="admin-login-error" role="alert" hidden>帳號或密碼錯誤，請重新輸入。</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              取消
+            </button>
+
+            <button type="submit" class="button-primary" id="admin-submit">
+              登入
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <div class="modal fade" id="announcement-editor-modal" tabindex="-1" aria-labelledby="announcement-editor-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="announcement-editor-title">新增公告</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉公告編輯視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="announcement-title" class="form-label">公告標題</label>
+                <input type="text" id="announcement-title" name="announcement-title" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label for="announcement-start" class="form-label">促銷開始日期</label>
+                <input type="date" id="announcement-start" name="announcement-start" class="form-control">
+              </div>
+
+              <div class="col-md-6">
+                <label for="announcement-end" class="form-label">促銷結束日期</label>
+                <input type="date" id="announcement-end" name="announcement-end" class="form-control">
+              </div>
+
+              <div class="col-12">
+                <label for="announcement-content" class="form-label">公告內容</label>
+                <textarea id="announcement-content" name="announcement-content" class="form-control" rows="5"></textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              取消
+            </button>
+
+            <button type="button" class="button-primary" id="announcement-save" disabled>
+              儲存公告
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="announcement-delete-modal" tabindex="-1" aria-labelledby="announcement-delete-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="announcement-delete-title">刪除公告確認</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉刪除確認視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <p class="mb-0">確定要刪除這則公告嗎？</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              保留公告
+            </button>
+
+            <button type="button" class="button-primary" id="announcement-delete-confirm" disabled>
+              確認刪除
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="announcement-edit-modal-1" tabindex="-1" aria-labelledby="announcement-edit-title-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="announcement-edit-title-1">修改公告</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉修改視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="edit-title-1" class="form-label">公告標題</label>
+                <input type="text" id="edit-title-1" class="form-control" value="校友返校住宿優惠">
+              </div>
+
+              <div class="col-md-6">
+                <label for="edit-start-1" class="form-label">促銷開始日期</label>
+                <input type="date" id="edit-start-1" class="form-control" value="2026-11-01">
+              </div>
+
+              <div class="col-md-6">
+                <label for="edit-end-1" class="form-label">促銷結束日期</label>
+                <input type="date" id="edit-end-1" class="form-control" value="2026-12-31">
+              </div>
+
+              <div class="col-12">
+                <label for="edit-content-1" class="form-label">公告內容</label>
+                <textarea id="edit-content-1" class="form-control" rows="6">適用對象：返校參與活動之校友。
+                優惠內容：活動期間預約住宿，可享指定房型九折優惠。
+                預約時請於備註填寫「校友返校優惠」。
+                本公告為課堂作業示範內容，非實際優惠。
+                </textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              取消
+            </button>
+
+            <button type="button" class="button-primary" id="announcement-update-1" disabled>
+              儲存修改
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="announcement-edit-modal-2" tabindex="-1" aria-labelledby="announcement-edit-title-2" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="announcement-edit-title-2">修改公告</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉修改視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="edit-title-2" class="form-label">公告標題</label>
+                <input type="text" id="edit-title-2" class="form-control" value="平日住宿優惠方案">
+              </div>
+
+              <div class="col-md-6">
+                <label for="edit-start-2" class="form-label">促銷開始日期</label>
+                <input type="date" id="edit-start-2" class="form-control" value="2026-10-20">
+              </div>
+
+              <div class="col-md-6">
+                <label for="edit-end-2" class="form-label">促銷結束日期</label>
+                <input type="date" id="edit-end-2" class="form-control" value="2026-12-20">
+              </div>
+
+              <div class="col-12">
+                <label for="edit-content-2" class="form-label">公告內容</label>
+                <textarea id="edit-content-2" class="form-control" rows="6">適用對象：符合本館住宿資格之住客。
+
+優惠內容：週一至週四入住指定房型，可享平日住宿優惠，例假日不適用。
+
+詳細條件請洽旅館服務人員。
+
+本公告為課堂作業示範內容，非實際優惠。</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              取消
+            </button>
+
+            <button type="button" class="button-primary" id="announcement-update-2" disabled>
+              儲存修改
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="announcement-edit-modal-3" tabindex="-1" aria-labelledby="announcement-edit-title-3" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="announcement-edit-title-3">修改公告</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉修改視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-12">
+                <label for="edit-title-3" class="form-label">公告標題</label>
+                <input type="text" id="edit-title-3" class="form-control" value="校園活動住宿專案">
+              </div>
+
+              <div class="col-md-6">
+                <label for="edit-start-3" class="form-label">促銷開始日期</label>
+                <input type="date" id="edit-start-3" class="form-control" value="2026-10-10">
+              </div>
+
+              <div class="col-md-6">
+                <label for="edit-end-3" class="form-label">促銷結束日期</label>
+                <input type="date" id="edit-end-3" class="form-control" value="2026-11-30">
+              </div>
+
+              <div class="col-12">
+                <label for="edit-content-3" class="form-label">公告內容</label>
+                <textarea id="edit-content-3" class="form-control" rows="6">適用對象：參與輔仁大學校園活動者。
+
+優惠內容：配合校園活動提供指定房型住宿專案。
+
+預約時請於備註填寫活動名稱。
+
+本公告為課堂作業示範內容，非實際優惠。</textarea>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              取消
+            </button>
+
+            <button type="button" class="button-primary" id="announcement-update-3" disabled>
+              儲存修改
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="admin-booking-edit-modal" tabindex="-1" aria-labelledby="admin-booking-edit-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="admin-booking-edit-title">修改預約</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉修改預約視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <div class="row g-3">
+              <div class="col-md-6">
+                <label for="admin-edit-number" class="form-label">預約編號</label>
+                <input type="text" id="admin-edit-number" name="admin-edit-number" class="form-control" value="DEMO001" readonly>
+              </div>
+
+              <div class="col-md-6">
+                <label for="admin-edit-name" class="form-label">預約人</label>
+                <input type="text" id="admin-edit-name" name="admin-edit-name" class="form-control" value="示範住客">
+              </div>
+
+              <div class="col-12">
+                <label for="admin-edit-room" class="form-label">房型</label>
+                <select id="admin-edit-room" name="admin-edit-room" class="form-select">
+                  <option value="deluxe-single" selected>豪華單人房</option>
+                  <option value="premium-single">尊榮單人房</option>
+                  <option value="deluxe-twin">豪華雙床房</option>
+                  <option value="premium-double">尊榮雙人房</option>
+                  <option value="vip-suite">貴賓聖心套房</option>
+                </select>
+              </div>
+
+              <div class="col-md-6">
+                <label for="admin-edit-check-in" class="form-label">入住日期</label>
+                <input type="date" id="admin-edit-check-in" name="admin-edit-check-in" class="form-control" value="2026-12-10">
+              </div>
+
+              <div class="col-md-6">
+                <label for="admin-edit-check-out" class="form-label">退房日期</label>
+                <input type="date" id="admin-edit-check-out" name="admin-edit-check-out" class="form-control" value="2026-12-11">
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              取消
+            </button>
+
+            <button type="button" class="button-primary" id="admin-booking-save" disabled>
+              儲存修改
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="admin-booking-cancel-modal" tabindex="-1" aria-labelledby="admin-booking-cancel-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="admin-booking-cancel-title">管理者取消預約</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉管理者取消預約視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <p>確定要取消預約 DEMO001 嗎？</p>
+
+            <dl class="row mb-3">
+              <dt class="col-sm-4">預約人</dt>
+              <dd class="col-sm-8">示範住客</dd>
+
+              <dt class="col-sm-4">房型</dt>
+              <dd class="col-sm-8">豪華單人房</dd>
+
+              <dt class="col-sm-4">入住／退房</dt>
+              <dd class="col-sm-8">2026/12/10～2026/12/11</dd>
+            </dl>
+
+            <p class="text-secondary small mb-0">管理者可協助取消入住當天的預約。</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-outline" data-bs-dismiss="modal">
+              保留預約
+            </button>
+
+            <button type="button" class="button-primary" id="admin-booking-cancel-confirm" disabled>
+              確認取消
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade" id="booking-success-modal" tabindex="-1" aria-labelledby="booking-success-title" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h2 class="modal-title fs-4" id="booking-success-title">預約完成示範</h2>
+            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="關閉預約完成視窗"></button>
+          </div>
+
+          <div class="modal-body">
+            <p>您已完成訂房流程的介面示範。</p>
+            <p>示範預約編號：<strong>DEMO001</strong></p>
+            <p class="text-secondary small mb-0">此編號為固定展示用，資料尚未送出或儲存，並未建立實際預約。</p>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="button-primary" data-bs-dismiss="modal">
+              完成
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="js/bootstrap.bundle.min.js"></script>
+  </body>
+</html>
